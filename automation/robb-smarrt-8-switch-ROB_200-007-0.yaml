@@ -136,7 +136,15 @@ action:
       - condition:
         - '{{ mode == "MoveMode.Up" }}'
       then: !input on_button_1_long
-      else: !input off_button_1_long
+  - conditions:
+    - '{{ button == 1 and cmd == "move" }}'
+    sequence:
+    - variables:
+        mode: '{{ trigger.event.data.params.move_mode }}'
+    - if:
+      - condition:
+        - '{{ mode == "MoveMode.Down" }}'
+      then: !input off_button_1_long
   - conditions:
     - '{{ button == 2 and cmd == "on" }}'
     sequence: !input on_button_2_short
@@ -152,7 +160,15 @@ action:
       - condition:
         - '{{ mode == "MoveMode.Up" }}'
       then: !input on_button_2_long
-      else: !input off_button_2_long
+  - conditions:
+    - '{{ button == 2 and cmd == "move" }}'
+    sequence:
+    - variables:
+        mode: '{{ trigger.event.data.params.move_mode }}'
+    - if:
+      - condition:
+        - '{{ mode == "MoveMode.Down" }}'
+      then: !input off_button_2_long
   - conditions:
     - '{{ button == 3 and cmd == "on" }}'
     sequence: !input on_button_3_short
@@ -168,7 +184,15 @@ action:
       - condition:
         - '{{ mode == "MoveMode.Up" }}'
       then: !input on_button_3_long
-      else: !input off_button_3_long
+  - conditions:
+    - '{{ button == 3 and cmd == "move" }}'
+    sequence:
+    - variables:
+        mode: '{{ trigger.event.data.params.move_mode }}'
+    - if:
+      - condition:
+        - '{{ mode == "MoveMode.Down" }}'
+      then: !input off_button_3_long
   - conditions:
     - '{{ button == 4 and cmd == "on" }}'
     sequence: !input on_button_4_short
@@ -184,4 +208,12 @@ action:
       - condition:
         - '{{ mode == "MoveMode.Up" }}'
       then: !input on_button_4_long
-      else: !input off_button_4_long
+  - conditions:
+    - '{{ button == 4 and cmd == "move" }}'
+    sequence:
+    - variables:
+        mode: '{{ trigger.event.data.params.move_mode }}'
+    - if:
+      - condition:
+        - '{{ mode == "MoveMode.Down" }}'
+      then: !input off_button_4_long
