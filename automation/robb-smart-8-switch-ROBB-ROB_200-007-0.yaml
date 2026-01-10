@@ -2,7 +2,7 @@ blueprint:
   name: Robb smarrt 8-button switch
   description: 'This blueprint is for the  Robb smarrt 8-button switch panel (ROBB
     ROB_200-007-0) when used with zha. (Should now also work for these types 
-    ROB_200_025_0,VES-ZB-WAL-012,SR-ZG9001K8-DIM)
+    ROB_200_025_0,VES-ZB-WAL-012,SR-ZG9001K8-DIM and old version ZG2833K8_EU05)
 
     It is for general use so all buttons can be connected to any action of your choice.
     This remote supports short button clicks and long button presses (over 4 seconds)
@@ -28,6 +28,8 @@ blueprint:
               model: VES-ZB-WAL-012
             - integration: zha
               model: SR-ZG9001K8-DIM
+            - integration: zha
+              model: ZG2833K8_EU05
           multiple: false
     on_button_1_short:
       name: On button 1 - short
