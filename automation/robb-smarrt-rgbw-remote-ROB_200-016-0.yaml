@@ -26,9 +26,7 @@ blueprint:
       selector:
         device:
           integration: zha
-          model:
-            - ROB_200-016-0
-            - ZG2858A
+          model: ZG2858A
 
     light_group_1:
       name: Light group 1
