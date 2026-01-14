@@ -412,3 +412,28 @@ action:
           - conditions:
             - '{{ button == 5 }}'
             sequence: !input button_g3_s5
+      
+      # Fallback for S1 when no group is active
+      - conditions:
+        - '{{ button == 1 and group not in [1, 2, 3] }}'
+        sequence: !input button_g1_s1
+      
+      # Fallback for S2 when no group is active
+      - conditions:
+        - '{{ button == 2 and group not in [1, 2, 3] }}'
+        sequence: !input button_g1_s2
+      
+      # Fallback for S3 when no group is active
+      - conditions:
+        - '{{ button == 3 and group not in [1, 2, 3] }}'
+        sequence: !input button_g1_s3
+      
+      # Fallback for S4 when no group is active
+      - conditions:
+        - '{{ button == 4 and group not in [1, 2, 3] }}'
+        sequence: !input button_g1_s4
+      
+      # Fallback for S5 when no group is active
+      - conditions:
+        - '{{ button == 5 and group not in [1, 2, 3] }}'
+        sequence: !input button_g1_s5
